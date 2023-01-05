@@ -22,6 +22,7 @@ const Home = () => {
     }
 
     return (
+    <Container>
     <Wrapper>
         <Header>나의 단짝 반려견을 알아보자❣</Header>
         <Contents>
@@ -33,16 +34,28 @@ const Home = () => {
         <Button style={{fontFamily:  "RixInooAriDuri"}} onClick={handleClikcButton}>테스트 시작하기</Button>
         </Contents>
     </Wrapper>
+    </Container>
     )
 }
 
 //다른곳에서 import 할 수 있도록 하는 과정
 export default Home;
 
+const Container = styled.div`
+    display: flex;
+    height: 120vh;
+    width: 100%;
+    background: #e6e6fa;
+    flex-direction: column;
+`
+
 
 const Wrapper = styled.div`
     height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 const Header = styled.div`
@@ -51,6 +64,10 @@ const Header = styled.div`
     justify-content: center;
     align-items: center;
     font-family: "RixInooAriDuri";
+    color: #191970;
+    background: #fff0f5;
+    height: 15vh;
+    width: 100%
 `
 
 const Contents = styled.div`
@@ -73,6 +90,7 @@ const LogoImage = styled.div`
 
 const Desc = styled.div`
     font-size: 20pt;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-family: "RixInooAriDuri";
 `

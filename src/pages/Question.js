@@ -113,14 +113,18 @@ const Question = () => {
 
 
     return (
+    <Container>
     <Wrapper>
-         <ProgressBar striped variant="danger" now={(questionNo / QuestionData.length)*100 } style={{marginTop: '20px'}}/>
-         <Title>{QuestionData[questionNo].title}</Title>
+        <ProgressBar striped variant="danger" now={(questionNo / QuestionData.length)*100 } style={{marginTop: '20px'}}/>
+        <Contents>
+        <Title>{QuestionData[questionNo].title}</Title>
          <ButtonGroup>
          <Button onClick={()=>handleClickButton(1, QuestionData[questionNo].type)} style={{width:"40%", minHeight:"200px", fontSize:"15px"}}>{QuestionData[questionNo].answera}</Button>
          <Button onClick={()=>handleClickButton(0, QuestionData[questionNo].type)} style={{width:"40%", minHeight:"200px", fontSize:"15px", marginLeft:"20px"}}>{QuestionData[questionNo].answerb}</Button>
          </ButtonGroup>
+        </Contents>
     </Wrapper>
+    </Container>
     )
 }
 
@@ -128,15 +132,36 @@ const Question = () => {
 export default Question;
 
 
+const Container = styled.div`
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: #fafad2;
+    align-items: center;
+    flex-direction: column;
+`
+
+
 const Wrapper = styled.div`
     height: 100vh;
     width: 100%;
 `
 
+
+const Contents = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+    width: 100%;
+`
+
+
 const Title = styled.div`
     font-size: 30pt;
     text-align: center;
     font-family: "RixInooAriDuri";
+    width: 100%;
 `
 
 

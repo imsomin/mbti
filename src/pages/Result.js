@@ -39,12 +39,13 @@ const Result = () => {
     //console.log(resultData);
 
     return (
+        <Container>
         <Wrapper>
             <Header>나의 단짝 반려견을 알아보자❣</Header>
             <Contents>
             <Title>결과 보기</Title>
             <LogoImage>
-                <img alt="myDog" src={resultData.image} className="rounded-circle" width={350} height={350}/>
+                <img alt="myDog" src={resultData.image} className="rounded-5" width={350} height={350}/>
             </LogoImage>
             <Desc>예비 견주님과 찰떡궁합 멍뭉이는 '{resultData.name}' 입니다.</Desc>
             <Desc style={{marginTop: 10,}}> 🎊{resultData.desc}🎈 </Desc>
@@ -56,6 +57,7 @@ const Result = () => {
              </ButtonGroup>
             </Contents>
         </Wrapper>
+        </Container>
         )
 }
 
@@ -63,18 +65,34 @@ const Result = () => {
 export default Result;
 
 
+const Container = styled.div`
+    display: flex;
+    height: 120vh;
+    width: 100%;
+    background: #e6e6fa;
+    flex-direction: column;
+`
+
 
 const Wrapper = styled.div`
     height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 `
 
 const Header = styled.div`
+    color: #191970;
     font-size: 40pt;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "RixInooAriDuri";
+    background: #fff0f5;
+    height: 15vh;
+    width: 100%
 `
 
 const Contents = styled.div`
@@ -88,17 +106,24 @@ const Title = styled.div`
     font-size: 30pt;
     margin-top: 40px;
     font-family: "RixInooAriDuri";
+    font-weight: 550;
 `
 
 const LogoImage = styled.div`
     margin-top: 10px;
+    margin-bottom: 20px;
+    width: 200;
+    height: 200;
 
 `
 
 const Desc = styled.div`
-    font-size: 20pt;
-    margin-top: 20px;
+    font-size: 18pt;
+    text-align: center;
     font-family: "RixInooAriDuri";
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 200;
 `
 
 const ButtonGroup = styled.div`
